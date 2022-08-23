@@ -1,0 +1,21 @@
+---
+version: 1
+service:
+  name: Jenkins Plugin
+  lifecycle: generally_available
+  tier: tier_2
+  product: OpsLevel
+  owner: integrations
+  language: Java
+  framework:
+  description: https://www.opslevel.com/docs/integrations/jenkins/
+  aliases:
+  tags:
+  - key: has_runtime
+    value: 'false'
+  repositories:
+  - name: OpsLevel/jenkins-opslevel-plugin
+    path: "/"
+    provider: github
+  tools:
+  dependencies:
