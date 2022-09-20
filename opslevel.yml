@@ -13,9 +13,14 @@ service:
   tags:
   - key: has_runtime
     value: 'false'
+  - key: is_fork
+    value: 'false'
+  - key: is_written_by_us
+    value: 'true'
   repositories:
   - name: OpsLevel/jenkins-opslevel-plugin
     path: "/"
     provider: github
   tools:
   dependencies:
+
