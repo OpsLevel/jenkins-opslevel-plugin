@@ -1,4 +1,5 @@
 # OpsLevel plugin for Jenkins
+[![Overall](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fapp.opslevel.com%2Fapi%2Fservice_level%2F_ZFHfdnK9K5lBrdYKUY2XNKD-myqG3y2qsgkl_MK0eY)](https://app.opslevel.com/services/jenkins_plugin/maturity-report)
 
 Provides Jenkins integration with OpsLevel. This allows you to notify OpsLevel when a deploy succeeds.
 
