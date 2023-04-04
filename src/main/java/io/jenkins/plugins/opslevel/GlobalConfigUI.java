@@ -33,10 +33,7 @@ public class GlobalConfigUI extends RunListener<Run<?, ?>> implements Describabl
 
         public DescriptorImpl() {
             super();
-            try {
-                load();
-            } catch(NullPointerException e) {
-            }
+            load();
         }
 
         public boolean getRun() {

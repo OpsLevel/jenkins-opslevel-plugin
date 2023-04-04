@@ -4,14 +4,13 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.16</version>
+        <version>4.58</version>
         <relativePath />
     </parent>
 
     <groupId>io.jenkins.plugins</groupId>
     <artifactId>opslevel</artifactId>
     <version>${revision}</version>
-    <packaging>hpi</packaging>
 
     <name>OpsLevel Plugin</name>
     <description>Provides Jenkins integration with OpsLevel. This allows you to notify OpsLevel when a build succeeds.</description>
@@ -33,14 +32,14 @@
         <developer>
             <id>opsleveljason</id>
             <email>jason@opslevel.com</email>
-            <organization>${organization.name}</organization>
-            <organizationUrl>${organization.url}</organizationUrl>
+            <organization>${proj.organization.name}</organization>
+            <organizationUrl>${proj.organization.url}</organizationUrl>
         </developer>
         <developer>
-            <id>sergio-opslevel</id>
-            <email>sergio@opslevel.com</email>
-            <organization>${organization.name}</organization>
-            <organizationUrl>${organization.url}</organizationUrl>
+            <id>dougedey</id>
+            <email>doug@opslevel.com</email>
+            <organization>${proj.organization.name}</organization>
+            <organizationUrl>${proj.organization.url}</organizationUrl>
         </developer>
     </developers>
 
@@ -57,15 +56,16 @@
     </issueManagement>
 
     <properties>
-        <revision>1.2.6</revision>
+        <revision>1.3.0</revision>
         <changelist>-SNAPSHOT</changelist>
 
         <pluginName>${project.artifactId}-plugin</pluginName>
         <gitHubRepo>jenkinsci/${pluginName}</gitHubRepo>
         <pluginUrl>https://github.com/${gitHubRepo}</pluginUrl>
 
-        <jenkins.version>2.277.1</jenkins.version>
-        <java.level>8</java.level>
+        <jenkins.version>2.361.4</jenkins.version>
+        <java.version>11</java.version>
+        <java.level>11</java.level>
     </properties>
 
     <!-- Add resource filtering to pass build time variables to runtime -->
@@ -171,19 +171,13 @@
         <groupId>org.jenkins-ci.plugins.workflow</groupId>
         <artifactId>workflow-step-api</artifactId>
       </dependency>
-      <dependency>
-        <groupId>org.jenkins-ci.plugins.workflow</groupId>
-        <artifactId>workflow-job</artifactId>
-        <version>1289.vd1c337fd5354</version>
-        <scope>test</scope>
-      </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>io.jenkins.tools.bom</groupId>
-                <artifactId>bom-2.277.x</artifactId>
-                <version>961.vf0c9f6f59827</version>
+                <artifactId>bom-2.361.x</artifactId>
+                <version>1887.vda_d0ddb_c15c4</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
