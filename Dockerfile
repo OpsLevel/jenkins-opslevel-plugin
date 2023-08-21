@@ -1,4 +1,4 @@
-FROM maven:3.8.3-adoptopenjdk-11
+FROM maven:3.8-adoptopenjdk-16
 
 WORKDIR /jenkins-opslevel/
 
