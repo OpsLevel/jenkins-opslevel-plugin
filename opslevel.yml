@@ -5,7 +5,7 @@ service:
   lifecycle: generally_available
   tier: tier_2
   product: OpsLevel
-  owner: integrations
+  owner: catalog_creation
   language: Java
   framework:
   description: https://www.opslevel.com/docs/integrations/jenkins/
