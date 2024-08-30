@@ -3,7 +3,7 @@ name: Security
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: "0 13 * * 1"  # 8am CT
+    - cron: "0 13 * * 1"  # 8am CT on Mondays
 
 jobs:
   scan-for-vulns:
