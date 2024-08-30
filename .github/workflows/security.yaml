@@ -1,0 +1,28 @@
+name: Security
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 13 * * 1"  # 8am CT
+
+jobs:
+  scan-for-vulns:
+    runs-on: ubuntu-latest
+    container:
+      image: public.ecr.aws/opslevel/platform-tools:latest
+      env:
+        ORG_GITLAB_TOKEN: ${{ secrets.ORG_GITLAB_TOKEN }}
+        ORG_GITHUB_TOKEN: ${{ secrets.ORG_GITHUB_TOKEN }}
+        GRYPE_INTEGRATION_SECRET: ${{ secrets.GRYPE_INTEGRATION_SECRET }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: 'true'
+          token: ${{ secrets.ORG_GITHUB_TOKEN }}
+      - name: Scan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
+          grype dir:${pwd} --only-fixed -o json | jq '{"matches": .matches}' |
+          curl -s -X POST https://upload.opslevel.com/integrations/custom_event/${GRYPE_INTEGRATION_SECRET}?alias=jenkins_plugin -H 'content-type: application/json'  --data-binary @-
