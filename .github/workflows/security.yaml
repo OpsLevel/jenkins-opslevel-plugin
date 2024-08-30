@@ -11,7 +11,6 @@ jobs:
     container:
       image: public.ecr.aws/opslevel/platform-tools:latest
       env:
-        ORG_GITLAB_TOKEN: ${{ secrets.ORG_GITLAB_TOKEN }}
         ORG_GITHUB_TOKEN: ${{ secrets.ORG_GITHUB_TOKEN }}
         GRYPE_INTEGRATION_SECRET: ${{ secrets.GRYPE_INTEGRATION_SECRET }}
     steps:
